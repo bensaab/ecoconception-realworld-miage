@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Comic Sans MS", "Papyrus", "Chalkduster", cursive;
+  animation: colorChange 5s infinite alternate, rotateText 8s linear infinite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Impact", "Brush Script MT", "Monotype Corsiva", cursive;
+  animation: shake 0.5s infinite alternate, fadeInOut 3s ease-in-out infinite;
+}
+
+p {
+  font-family: "Courier New", "Rock Salt", "Marker Felt", monospace;
+  animation: enlargeText 4s ease-in-out infinite;
+}
+
+body {
+  background-color: #ffcc00; /* Yellow background */
+  color: #660066; /* Purple text */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ff3300; /* Orange headings */
+}
+
+p {
+  color: #006666; /* Teal paragraphs */
+}
+
+a {
+  text-decoration: underline;
+  animation: wiggle 1s infinite alternate, colorChange 4s infinite alternate;
+}
+
+strong {
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes enlargeText {
+  0%,
+  100% {
+    font-size: 1em;
+  }
+  50% {
+    font-size: 1.2em;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #660066;
+  }
+  50% {
+    color: #ff3300;
+  }
+  100% {
+    color: #660066;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
