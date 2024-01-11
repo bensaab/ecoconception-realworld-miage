@@ -13,10 +13,10 @@ h6 {
   animation: shake 0.5s infinite alternate, fadeInOut 3s ease-in-out infinite;
 }
 
-p {
+/* p {
   font-family: "Courier New", "Rock Salt", "Marker Felt", monospace;
   animation: enlargeText 4s ease-in-out infinite;
-}
+} */
 
 body {
   background-color: #ffcc00; /* Yellow background */
