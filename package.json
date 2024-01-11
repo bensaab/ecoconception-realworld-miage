@@ -13,7 +13,7 @@
     "lhci:desktop": "lhci autorun --collect.settings.preset=desktop"
   },
   "engines": {
-    "node": "^14.20.0 || ^16.13.0 || ^18.10.0"
+    "node": "^14.20.0 || ^16.13.0 || ^18.10.0 || ^18.14.2"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +30,7 @@
     "marked": "^4.2.12",
     "rxjs": "^7.4.0",
     "tslib": "^2.3.0",
+    "yarn": "^1.22.21",
     "zone.js": "~0.13.3"
   },
   "devDependencies": {
