@@ -19,7 +19,7 @@ import { Comment } from "../../core/models/comment.model";
 import { ShowAuthedDirective } from "../../shared/show-authed.directive";
 import { Errors } from "../../core/models/errors.model";
 import { Profile } from "../../core/models/profile.model";
-
+let nombre: number = 10000000;
 @Component({
   selector: "app-article-page",
   templateUrl: "./article.component.html",
@@ -86,10 +86,18 @@ export class ArticleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
   }
 
   onToggleFavorite(favorited: boolean): void {
     this.article.favorited = favorited;
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
 
     if (favorited) {
       this.article.favoritesCount++;
@@ -100,9 +108,17 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   toggleFollowing(profile: Profile): void {
     this.article.author.following = profile.following;
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
   }
 
   deleteArticle(): void {
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
     this.isDeleting = true;
 
     this.articleService
@@ -114,6 +130,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   addComment() {
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
     this.isSubmitting = true;
     this.commentFormErrors = null;
 
@@ -134,6 +154,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   deleteComment(comment: Comment): void {
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
     this.commentsService
       .delete(comment.id, this.article.slug)
       .pipe(takeUntil(this.destroy$))
@@ -143,6 +167,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   trackById(index: number, item: Comment): string {
+    for (let i = 0; i < nombre; i++) {
+      this.articleService.get(this.article.slug);
+      this.commentsService.getAll(this.article.slug);
+    }
     return item.id;
   }
 }
